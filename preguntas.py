@@ -136,29 +136,29 @@ def pregunta_05():
     """
 
     # Importe mean_squared_error
-    from ____ import ____
+    from sklearn.metrics import mean_squared_error
 
     # Cargue las variables.
-    x_train, x_test, y_train, y_test = pregunta_02()
+    X_train, X_test, y_train, y_test = pregunta_02()
 
     # Obtenga el objeto GridSearchCV
     estimator = pregunta_04()
 
     # Entrene el estimador
-    estimator.fit(x_train, y_train)  #
+    estimator.fit(X_train, X_train)  #
 
     # Pronostique para las muestras de entrenamiento y validacion
-    y_trian_pred = ____.____(____)  
-    y_test_pred = ____.____(____)  
+    y_train_pred = estimator.predict(X_train)  
+    y_test_pred = estimator.predict(X_test)  
 
     # Calcule el error cuadrático medio de las muestras
-    mse_train = ____(  
-        ___,  
-        ___,  
+    mse_train = mean_squared_error(  
+        y_train_pred,  
+        y_train,  
     )
-    mse_test = ____(  
-        ___,  
-        ___,  
+    mse_test = mean_squared_error(  
+        y_test_pred,  
+        y_test,  
     )
 
     # Retorne el mse de entrenamiento y prueba
