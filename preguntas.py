@@ -44,7 +44,7 @@ def pregunta_02():
 
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 12453. Use el 75% de los patrones para entrenamiento.
-    (x_train, x_test, y_train, y_test,) = train_test_split(  
+    (X_train, X_test, y_train, y_test,) = train_test_split(  
         X,  
         y,  
         test_size=0.25,  
@@ -52,7 +52,7 @@ def pregunta_02():
     )  
 
     # Retorne `X_train`, `X_test`, `y_train` y `y_test`
-    return x_train, x_test, y_train, y_test
+    return X_train, X_test, y_train, y_test
 
 
 def pregunta_03():
@@ -63,7 +63,9 @@ def pregunta_03():
     # Importe MLPRegressor
     # Importe MinMaxScaler
     # Importe Pipeline
-    from ____ import ____
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import MinMaxScaler
+    from sklearn.neural_network import MLPRegressor
 
     # Cree un pipeline que contenga un estimador MinMaxScaler y un estimador
     # MLPRegressor
@@ -71,11 +73,11 @@ def pregunta_03():
         steps=[
             (
                 "minmaxscaler",
-                ____(___),  
+                MinMaxScaler(),  
             ),
             (
                 "mlpregressor",
-                ____(____),  
+                MLPRegressor(),  
             ),
         ],
     )
